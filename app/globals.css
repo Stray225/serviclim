@@ -1,0 +1,85 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --bg:#0b0f18;
+  --bg2:#0a1222;
+  --ink:#e9edf4;
+  --ink-sub:#b9c3d6;
+  --brand:#23d4ee;
+  --brand-2:#1f6feb;
+  --gold:#d2b48c; /* toque cálido tipo editorial */
+  --card:#0f172aee;
+  --border:#1f2a3d;
+}
+
+/* tipografías base */
+html, body { background: radial-gradient(1200px 600px at 50% -260px, #173969 0%, transparent 60%), linear-gradient(180deg,var(--bg),var(--bg2)); color: var(--ink); }
+h1,h2{ font-family: var(--font-serif), serif; letter-spacing:.3px }
+h3,h4,button,a, p, li{ font-family: var(--font-sans), system-ui, Arial, sans-serif }
+
+/* botones “pill” */
+.btn-primary{
+  background: linear-gradient(90deg,var(--brand),var(--brand-2));
+  color:#03101e; font-weight:800; border-radius:9999px; padding:.9rem 1.6rem;
+  box-shadow: 0 14px 30px rgba(31,111,235,.25);
+  transition: transform .18s ease, filter .18s ease;
+}
+.btn-primary:hover{ filter:brightness(1.05); transform: translateY(-1px) }
+
+/* tarjetas lujo */
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 14px 40px rgba(0,0,0,.25);
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.card:hover{ transform: translateY(-4px); border-color: var(--brand) }
+
+/* separador editorial fino */
+.hr-gold{ height:1px; background:linear-gradient(90deg,transparent, var(--gold), transparent) }
+
+/* utilidades */
+.section{ padding: 84px 0 }
+.section-s{ padding: 56px 0 }
+
+/* Marquee */
+.marquee { 
+  overflow: hidden; 
+  white-space: nowrap; 
+}
+.marquee-track {
+  display: inline-block;
+  will-change: transform;
+  padding-block: 0.75rem;
+  animation: marquee 25s linear infinite;
+}
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* evita scroll horizontal fantasma */
+html, body { overflow-x: hidden; }
+
+/* helpers de sección */
+.section { padding-top: 4rem; padding-bottom: 4rem; }
+@media (min-width: 768px) { .section { padding-top: 5rem; padding-bottom: 5rem; } }
+@media (min-width: 1024px) { .section { padding-top: 6rem; padding-bottom: 6rem; } }
+
+.section-s { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+
+:root{
+  --bg: #0A1220;
+  --panel: #0F172A;
+  --ink: #E5EDF7;
+  --ink-subtle:#B6C2D6;
+  --brand:#12B2ED;
+  --brand-600:#0E8FC4;
+  --steel-500:#5E86AA;
+}
+html, body { background: var(--bg); color: var(--ink); }
